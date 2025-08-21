@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     image: DataTypes.STRING
   }, {
     sequelize,
-    tableName: 'Categories', // Especificar nombre de tabla
+    tableName: 'categories', // Especificar nombre de tabla
   });
   return Categories;
 };
