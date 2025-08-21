@@ -3,7 +3,7 @@ const db = require('../models'); // importa el index.js de models
 
 const getAllCategories = async () => {
   try {
-    return await db.Categories.findAll();
+    return await db.categories.findAll();
   } catch (error) {
     throw new Error(error.message || "Failed to get Categories");
   }
