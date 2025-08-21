@@ -7,11 +7,11 @@
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "daniel",
+    "password": "iDw1St7xwfeVNbuDjeby7aNqUWUMNyfk",
+    "database": "mi_api_bienestar_711_pos",
+    "host": "postgresql://daniel:iDw1St7xwfeVNbuDjeby7aNqUWUMNyfk@dpg-d2ji7895pdvs73f8vg40-a.oregon-postgres.render.com/mi_api_bienestar_711_pos",
+    "dialect": "postgres"
   },
   "production": {
     "username": "root",
