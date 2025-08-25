@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "nodemon server.js",
     "migrate": "sequelize db:migrate",
-    "undo": "sequelize db:migrate:undo:all",
-    "migrate-seed": "npm run undo && npm run migrate"
+    "migrate-seed": "npm run migrate"
   },
   "keywords": [],
   "author": "",
