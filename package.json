@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "migrate": "sequelize db:migrate",
+    "migrate": "sequelize db:migrate --env test",
     "migrate-seed": "npm run migrate"
   },
   "keywords": [],
