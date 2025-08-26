@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node ./node_modules/sequelize-cli/lib/sequelize db:migrate --env test && node server.js",
     "dev": "nodemon server.js",
-    "migrate": "npx sequelize-cli db:migrate --env test",
-    "undo": "npx sequelize-cli db:migrate:undo:all --env test",
-    "seed": "npx sequelize-cli db:seed:all --env test",
-    "migrate-seed": "npm run migrate && npm run seed"
+
+    "migrate": "node ./node_modules/sequelize-cli/lib/sequelize db:migrate --env test",
+    "migrate:undo": "node ./node_modules/sequelize-cli/lib/sequelize db:migrate:undo:all --env test",
+
+    "seed": "node ./node_modules/sequelize-cli/lib/sequelize db:seed:all --env test",
+    "seed:undo": "node ./node_modules/sequelize-cli/lib/sequelize db:seed:undo:all --env test",
+    
+    "reset-db": "node ./node_modules/sequelize-cli/lib/sequelize db:drop --env test && node ./node_modules/sequelize-cli/lib/sequelize db:create --env test && node ./node_modules/sequelize-cli/lib/sequelize db:migrate --env test"
+
   },
   "keywords": [],
   "author": "",
