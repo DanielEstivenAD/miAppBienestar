@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-        Events,this.belongsTo(models.Categories, {
-        foreignKey: "Categories",
+      Events.belongsTo(models.Categories, {
+        foreignKey: "categoryId",
         as: "category"
       })
     }
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     categoryId: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'events',
+    tableName: 'events', // Consistente con categories.js
   });
   return Events;
 };
