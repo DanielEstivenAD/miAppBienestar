@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
         Events,this.belongsTo(models.Categories, {
-        through: "Categories",
+        through: "categories",
         as: "category"
       })
     }
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     categoryId: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'Events',
+    modelName: 'events',
   });
   return Events;
 };
