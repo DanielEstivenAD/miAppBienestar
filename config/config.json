@@ -10,7 +10,7 @@
     "username": "daniel",
     "password": "iDw1St7xwfeVNbuDjeby7aNqUWUMNyfk",
     "database": "mi_api_bienestar_711_pos",
-    "host": "dpg-d2ji7895pdvs73f8vg40-a.oregon-postgres.render.com/mi_api_bienestar_711_pos",
+    "host": "dpg-d2ji7895pdvs73f8vg40-a.oregon-postgres.render.com",
     "dialect": "postgres"
   },
   "production": {
