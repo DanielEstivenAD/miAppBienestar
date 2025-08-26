@@ -4,8 +4,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "migrate": "sequelize db:migrate --env test",
-    "migrate-seed": "npm run migrate"
+    "migrate": "npx sequelize-cli db:migrate --env test",
+    "undo": "npx sequelize-cli db:migrate:undo:all --env test",
+    "seed": "npx sequelize-cli db:seed:all --env test",
+    "migrate-seed": "npm run migrate && npm run seed"
   },
   "keywords": [],
   "author": "",
