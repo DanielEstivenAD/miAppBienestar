@@ -27,12 +27,15 @@ module.exports = {
       maxCapacity: {
         type: Sequelize.INTEGER
       },
-      categoryId:{
+      categoryId: {
         type: Sequelize.INTEGER,
+        allowNull: true,
         references: {
           model: 'categories',
           key: 'id'
-        }
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL'
       },
       createdAt: {
         allowNull: false,

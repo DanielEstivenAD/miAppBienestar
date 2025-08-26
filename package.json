@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node ./node_modules/sequelize-cli/lib/sequelize db:migrate --env test && node server.js",
+    "start": "node ./node_modules/sequelize-cli/lib/sequelize db:migrate:undo:all --env test && node ./node_modules/sequelize-cli/lib/sequelize db:migrate --env test && node server.js",
     "dev": "nodemon server.js",
 
     "migrate": "node ./node_modules/sequelize-cli/lib/sequelize db:migrate --env test",

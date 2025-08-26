@@ -10,7 +10,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING(30) // Agregar longitud para consistencia con el modelo
+        type: Sequelize.STRING(30),
+        allowNull: false
       },
       description: {
         type: Sequelize.STRING
