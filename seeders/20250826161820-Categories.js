@@ -70,7 +70,7 @@ module.exports = {
           updatedAt: new Date()
         },
         {
-          name: "VOLUNTARIADO Y RESPONSABILIDAD SOCIAL",
+          name: "VOLUNTARIADO Y RESP. SOCIAL",
           description: "Proyectos de voluntariado y responsabilidad social para impactar positivamente en la comunidad.",
           image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
           createdAt: new Date(),
