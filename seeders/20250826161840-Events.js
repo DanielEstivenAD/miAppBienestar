@@ -67,7 +67,7 @@ module.exports = {
         startDate: new Date("2025-03-29"),
         endDate: new Date("2025-03-29"),
         categoryId: 3,
-        state: "INACTIVO",
+        state: false,
         maxCapacity: 100,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -155,7 +155,7 @@ module.exports = {
         startDate: new Date("2025-06-14"),
         endDate: new Date("2025-06-14"),
         categoryId: 7,
-        state: "INACTIVO",
+        state: false,
         maxCapacity: 80,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -199,7 +199,7 @@ module.exports = {
         startDate: new Date("2025-06-02"),
         endDate: new Date("2025-06-02"),
         categoryId: 9,
-        state: "INACTIVO",
+        state: false,
         maxCapacity: 70,
         createdAt: new Date(),
         updatedAt: new Date()
