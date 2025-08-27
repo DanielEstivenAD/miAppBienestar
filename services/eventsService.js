@@ -7,6 +7,10 @@ const getAllEvents = async () => {
       include: [{
         model: db.Categories,
         as: 'category'
+      }],
+      include: [{
+        model: db.User,
+        as: 'user'
       }]
     });
   } catch (error) {
@@ -20,6 +24,10 @@ const getEvent = async (id) => {
       include: [{
         model: db.Categories,
         as: 'category'
+      }],
+      include: [{
+        model: db.User,
+        as: 'user'
       }]
     });
   } catch (error) {
@@ -27,7 +35,7 @@ const getEvent = async (id) => {
   }
 };
 
-const createEvent = async ({ name, description, starDate, endDate, state, maxCapacity, CategoryId }) => {
+const createEvent = async ({ name, description, starDate, endDate, state, maxCapacity, categoryId, userId }) => {
   try {
     return await db.Events.create({
       name,
@@ -36,17 +44,18 @@ const createEvent = async ({ name, description, starDate, endDate, state, maxCap
       endDate,
       state,
       maxCapacity,
-      CategoryId
+      categoryId,
+      userId
     });
   } catch (error) {
     throw new Error(error.message || "Event could not be created");
   }
 };
 
-const updateEvent = async (id, { name, description, starDate, endDate, state, maxCapacity, CategoryId }) => {
+const updateEvent = async (id, { name, description, starDate, endDate, state, maxCapacity, categoryId, userId }) => {
   try {
     return await db.Events.update(
-      { name, description, starDate, endDate, state, maxCapacity, CategoryId },
+      { name, description, starDate, endDate, state, maxCapacity, categoryId, userId },
       { where: { id } }
     );
   } catch (error) {

@@ -30,7 +30,7 @@ const getEvent = async (req, res) => {
 
 const createEvent = async (req, res) => {
     try {
-    const { name, description, starDate, endDate, state, maxCapacity, CategoryId } = req.body;
+    const { name, description, starDate, endDate, state, maxCapacity, categoryId, userId } = req.body;
     
     if (!name || !description) {
         return res.status(400).json({ 
@@ -39,11 +39,17 @@ const createEvent = async (req, res) => {
         });
     }
     
-    // Validar CategoryId si se proporciona
-    if (CategoryId && isNaN(CategoryId)) {
+    // Validar categoryId si se proporciona
+    if (categoryId && isNaN(categoryId)) {
       return res.status(400).json({ 
         status: "FAILED", 
-        error: "CategoryId must be a valid number" 
+        error: "categoryId must be a valid number" 
+      });
+    }
+    if (userId && isNaN(userId)) {
+      return res.status(400).json({ 
+        status: "FAILED", 
+        error: "userId must be a valid number" 
       });
     }
     
@@ -54,7 +60,8 @@ const createEvent = async (req, res) => {
       endDate,
       state,
       maxCapacity,
-      CategoryId
+      categoryId,
+      userId
     });
     res.status(201).json({ status: "Ok", data: created });
   } catch (error) {
@@ -65,17 +72,23 @@ const createEvent = async (req, res) => {
 const updateEvent = async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, description, starDate, endDate, state, maxCapacity, CategoryId } = req.body;
+    const { name, description, starDate, endDate, state, maxCapacity, categoryId, userId } = req.body;
     
     if (!id || isNaN(id)) {
       return res.status(400).json({ status: "FAILED", error: "Valid ID is required" });
     }
     
-    // Validar CategoryId si se proporciona
-    if (CategoryId && isNaN(CategoryId)) {
+    // Validar categoryId si se proporciona
+    if (categoryId && isNaN(categoryId)) {
       return res.status(400).json({ 
         status: "FAILED", 
-        error: "CategoryId must be a valid number" 
+        error: "categoryId must be a valid number" 
+      });
+    }
+    if (userId && isNaN(userId)) {
+      return res.status(400).json({ 
+        status: "FAILED", 
+        error: "userId must be a valid number" 
       });
     }
     
@@ -86,7 +99,8 @@ const updateEvent = async (req, res) => {
       endDate,
       state,
       maxCapacity,
-      CategoryId
+      categoryId,
+      userId
     });
 
     if (updated[0] > 0) {

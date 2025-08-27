@@ -15,7 +15,9 @@ app.get('/',(req,res) =>{
 
 //routes
 app.use('/api/v1/categories', require('./api/v1/routes/categories.routes'));
-app.use('/api/v1/events', require('./api/v1/routes/events.routes')); // Descomentar esta línea
+app.use('/api/v1/events', require('./api/v1/routes/events.routes'));
+app.use('/api/v1/users', require('./api/v1/routes/user.routes'));
+app.use('/api/v1/rols', require('./api/v1/routes/rols.routes'));
 
 app.set('PORT', process.env.PORT || 4000);
 app.listen(app.get('PORT'), ()=>{

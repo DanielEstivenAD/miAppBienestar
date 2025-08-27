@@ -15,18 +15,24 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "categoryId",
         as: "category"
       })
+      Events.belongsTo(models.User, {
+        foreignKey: "userId",
+        as: "user"
+      })
     }
   }
   Events.init({
     name: DataTypes.STRING,
     description: DataTypes.STRING,
-    starDate: DataTypes.DATE,
+    startDate: DataTypes.DATE,
     endDate: DataTypes.DATE,
     state: DataTypes.BOOLEAN,
     maxCapacity: DataTypes.INTEGER,
-    categoryId: DataTypes.INTEGER
+    categoryId: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER,
   }, {
     sequelize,
+    modelName: 'Events',
     tableName: 'events', // Consistente con categories.js
   });
   return Events;

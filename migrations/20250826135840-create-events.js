@@ -15,7 +15,7 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
-      starDate: {
+      startDate: {
         type: Sequelize.DATE
       },
       endDate: {
@@ -32,6 +32,16 @@ module.exports = {
         allowNull: true,
         references: {
           model: 'categories',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL'
+      },
+      userId: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+          model: 'users',
           key: 'id'
         },
         onUpdate: 'CASCADE',
