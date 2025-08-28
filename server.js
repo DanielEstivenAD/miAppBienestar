@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const db = require('./models');
+const cors = require("cors");
 
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
@@ -23,3 +24,4 @@ app.set('PORT', process.env.PORT || 4000);
 app.listen(app.get('PORT'), ()=>{
     console.log(`Server running on PORT ${app.get('PORT')}`)
 })
+app.use(cors())
