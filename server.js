@@ -11,11 +11,13 @@ if (process.env.NODE_ENV !== 'production') {
 app.use(cors({
     origin: [
         'http://localhost:57689',
+        'http://localhost:60876/',
         'http://localhost:51853',
         'http://localhost:3000',
         'http://127.0.0.1:57689',
         'http://127.0.0.1:51853',
-        'http://127.0.0.1:3000'
+        'http://127.0.0.1:3000',
+        
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
