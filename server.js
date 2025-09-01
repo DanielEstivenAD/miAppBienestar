@@ -59,7 +59,7 @@ app.get('/', (req, res) => {
     res.send({ message: "API Activa" });
 });
 
-// Rutas
+//routes
 app.use('/api/v1/categories', require('./api/v1/routes/categories.routes'));
 app.use('/api/v1/events', require('./api/v1/routes/events.routes'));
 app.use('/api/v1/users', require('./api/v1/routes/user.routes'));
