@@ -24,4 +24,4 @@ app.set('PORT', process.env.PORT || 4000);
 app.listen(app.get('PORT'), ()=>{
     console.log(`Server running on PORT ${app.get('PORT')}`)
 })
-app.use(cors())
+app.use(cors({origin: '*'}))
